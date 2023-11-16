@@ -1,0 +1,18 @@
+<form [formGroup]="credentialForm" (ngSubmit)="onLoginFormSubmit()">
+    <div class="flex flex-column gap-2">
+        <label htmlFor="username">Username</label>
+        <br>
+        <input pInputText id="username" formControlName="username" aria-describedby="username-help"/>
+    </div>
+
+    <div class="flex flex-column gap-2">
+        <label htmlFor="password">Password</label>
+        <br>
+        <input pInputText id="password" formControlName="password" type="password"/>
+    </div>
+
+    <div class="flex flex-column gap-2">
+        <p-button type="submit" [disabled]="!credentialForm.valid" label="Submit"></p-button>
+        <p-button label="Forgot password?" [raised]="true" severity="secondary"></p-button>
+    </div>
+</form>
